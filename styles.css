@@ -47,6 +47,8 @@ input {
 
 .hero,
 .matcher-card,
+.info-panel,
+.plan-section,
 .results-section {
   background: rgba(255, 255, 255, 0.86);
   border: 1px solid rgba(223, 229, 242, 0.8);
@@ -110,6 +112,8 @@ h1 {
 }
 
 .matcher-card,
+.info-panel,
+.plan-section,
 .results-section {
   padding: 28px;
   margin-top: 24px;
@@ -132,6 +136,65 @@ h1 {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 18px;
+}
+
+.info-grid,
+.diagnosis-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.info-grid article,
+.diagnosis-card {
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: #fff;
+}
+
+.info-grid h3 {
+  margin-bottom: 10px;
+  font-size: 1.05rem;
+}
+
+.info-grid ul {
+  margin: 0;
+  padding-left: 20px;
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+.diagnosis-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.diagnosis-card {
+  display: grid;
+  gap: 10px;
+  background: linear-gradient(180deg, #ffffff 0%, #f8faff 100%);
+}
+
+.diagnosis-card span {
+  color: var(--primary);
+  font-size: 0.82rem;
+  font-weight: 900;
+}
+
+.diagnosis-card strong {
+  font-size: 1.04rem;
+  line-height: 1.55;
+}
+
+.diagnosis-card p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.subscore-fieldset {
+  grid-column: 1 / -2;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
 label,
@@ -296,7 +359,14 @@ button:hover {
 @media (max-width: 980px) {
   .hero,
   .matcher-form,
-  .results-grid {
+  .info-grid,
+  .diagnosis-grid,
+  .results-grid,
+  .subscore-fieldset {
     grid-template-columns: 1fr;
+  }
+
+  .subscore-fieldset {
+    grid-column: auto;
   }
 }

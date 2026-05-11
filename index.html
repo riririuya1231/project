@@ -3,22 +3,55 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>雅思课程产品匹配器</title>
+    <title>雅思课程咨询方案生成器</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <main class="app-shell">
       <section class="hero" aria-labelledby="page-title">
         <div>
-          <p class="eyebrow">IELTS Product Match</p>
-          <h1 id="page-title">雅思课程产品匹配器</h1>
+          <p class="eyebrow">IELTS Consultation Planner</p>
+          <h1 id="page-title">雅思课程咨询方案生成器</h1>
           <p class="hero-copy">
-            输入目前雅思分数、目标分数与学习方式，系统会优先推荐最适合的班课、一对一、冲刺或组合课程，并展示优势、适配原因和价格。
+            自用版咨询话术工具：输入总分和目标分，小分可选填，系统会自动判断补单项还是全科，生成班课、一对一加班课和飞跃计划组合方案，附官方价、最低价、课时、服务与推荐话术。
           </p>
         </div>
-        <div class="hero-card" aria-label="匹配逻辑说明">
-          <span class="hero-card__number">4</span>
-          <span>步完成课程推荐</span>
+        <div class="hero-card" aria-label="咨询流程说明">
+          <span class="hero-card__number">3</span>
+          <span>步生成可讲方案</span>
+        </div>
+      </section>
+
+      <section class="info-panel" aria-labelledby="intro-title">
+        <div class="section-heading">
+          <p class="eyebrow">Before Matching</p>
+          <h2 id="intro-title">咨询前可先铺垫的信息</h2>
+        </div>
+        <div class="info-grid">
+          <article>
+            <h3>机构优势可讲</h3>
+            <ul>
+              <li>全科预备、全能班、连报、私教 1V1、飞跃计划覆盖不同基础和预算。</li>
+              <li>班课负责搭框架和带节奏，1V1 负责诊断薄弱项、定制补课和临考冲刺。</li>
+              <li>配套学习系统、课前/结课学习计划、口语测评、写作精批、阶段/全真模考与督导服务。</li>
+            </ul>
+          </article>
+          <article>
+            <h3>雅思分数常见用途</h3>
+            <ul>
+              <li>5.5：预科、语言班、部分交换/基础申请门槛常见要求。</li>
+              <li>6.0-6.5：本科/硕士正课常见区间，6.5 是多数学生主流目标。</li>
+              <li>7.0+：高排名院校、传媒/教育/法学等专业或奖学金申请更常见。</li>
+            </ul>
+          </article>
+          <article>
+            <h3>推荐逻辑</h3>
+            <ul>
+              <li>不再按备考时间硬匹配，先看当前总分、目标总分和小分短板。</li>
+              <li>小分未填：优先给全科体系课；小分已填：单项落差明显时推荐单项 1V1 加班课。</li>
+              <li>目标提升越大，越建议“班课/飞跃计划 + 1V1”组合，降低卡分风险。</li>
+            </ul>
+          </article>
         </div>
       </section>
 
@@ -69,10 +102,10 @@
           </fieldset>
 
           <fieldset>
-            <legend>更偏好的课程形态</legend>
+            <legend>课程偏好</legend>
             <label class="radio-card">
               <input type="radio" name="courseType" value="any" checked />
-              <span>不限，自动匹配</span>
+              <span>自动推荐</span>
             </label>
             <label class="radio-card">
               <input type="radio" name="courseType" value="group" />
@@ -80,32 +113,63 @@
             </label>
             <label class="radio-card">
               <input type="radio" name="courseType" value="oneOnOne" />
-              <span>一对一</span>
+              <span>1V1 加班课</span>
             </label>
             <label class="radio-card">
               <input type="radio" name="courseType" value="combo" />
-              <span>组合课</span>
+              <span>组合/飞跃</span>
             </label>
           </fieldset>
 
-          <label>
-            备考周期
-            <select id="timeline" name="timeline" required>
-              <option value="urgent">1 个月内冲刺</option>
-              <option value="standard" selected>2-3 个月</option>
-              <option value="long">3 个月以上</option>
-            </select>
-          </label>
+          <fieldset class="subscore-fieldset">
+            <legend>小分选填：有成绩就填，没有可空</legend>
+            <label>
+              听力
+              <select name="listeningScore">
+                <option value="">未填</option>
+                <option value="4.0">4.0</option><option value="4.5">4.5</option><option value="5.0">5.0</option><option value="5.5">5.5</option><option value="6.0">6.0</option><option value="6.5">6.5</option><option value="7.0">7.0</option><option value="7.5">7.5+</option>
+              </select>
+            </label>
+            <label>
+              阅读
+              <select name="readingScore">
+                <option value="">未填</option>
+                <option value="4.0">4.0</option><option value="4.5">4.5</option><option value="5.0">5.0</option><option value="5.5">5.5</option><option value="6.0">6.0</option><option value="6.5">6.5</option><option value="7.0">7.0</option><option value="7.5">7.5+</option>
+              </select>
+            </label>
+            <label>
+              口语
+              <select name="speakingScore">
+                <option value="">未填</option>
+                <option value="4.0">4.0</option><option value="4.5">4.5</option><option value="5.0">5.0</option><option value="5.5">5.5</option><option value="6.0">6.0</option><option value="6.5">6.5</option><option value="7.0">7.0</option><option value="7.5">7.5+</option>
+              </select>
+            </label>
+            <label>
+              写作
+              <select name="writingScore">
+                <option value="">未填</option>
+                <option value="4.0">4.0</option><option value="4.5">4.5</option><option value="5.0">5.0</option><option value="5.5">5.5</option><option value="6.0">6.0</option><option value="6.5">6.5</option><option value="7.0">7.0</option><option value="7.5">7.5+</option>
+              </select>
+            </label>
+          </fieldset>
 
-          <button type="submit">生成匹配方案</button>
+          <button type="submit">生成咨询方案</button>
         </form>
+      </section>
+
+      <section class="plan-section" aria-labelledby="plan-title">
+        <div class="section-heading">
+          <p class="eyebrow">Step 2</p>
+          <h2 id="plan-title">可直接讲给学生的方案</h2>
+          <p id="match-summary" class="muted">已根据默认条件生成方案；不按时间匹配，价格按产品表展示，成交价以实际政策为准。</p>
+        </div>
+        <div id="diagnosis" class="diagnosis-grid" aria-live="polite"></div>
       </section>
 
       <section class="results-section" aria-labelledby="results-title">
         <div class="section-heading">
-          <p class="eyebrow">Step 2</p>
-          <h2 id="results-title">推荐课程</h2>
-          <p id="match-summary" class="muted">已根据默认条件生成推荐，可调整左侧信息重新匹配；价格为产品资料占位展示，以最终报价为准。</p>
+          <p class="eyebrow">Step 3</p>
+          <h2 id="results-title">推荐课程与价格</h2>
         </div>
         <div id="results" class="results-grid" aria-live="polite"></div>
       </section>
@@ -123,16 +187,16 @@
         <p class="course-desc"></p>
         <dl class="course-meta"></dl>
         <div>
-          <h4>优势亮点</h4>
+          <h4>服务与优势</h4>
           <ul class="benefits"></ul>
         </div>
         <div>
-          <h4>适合情况</h4>
+          <h4>咨询话术</h4>
           <p class="fit"></p>
         </div>
         <div class="price-row">
           <span class="price"></span>
-          <button type="button" class="consult-button">咨询排课</button>
+          <button type="button" class="consult-button">加入备选</button>
         </div>
       </article>
     </template>
