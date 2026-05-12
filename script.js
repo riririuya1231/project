@@ -35,9 +35,9 @@ const conversionConfigs = {
 
 const serviceBundles = {
   "线上大班": {
-    advantages: ["价格更友好，适合预算敏感学生", "系统学习雅思基础题型和方法", "适合入门、基础梳理、技巧建立", "可作为后续小班/1V1冲刺前的基础段课程"],
+    advantages: ["价格更友好，适合预算敏感学生先完整过一遍雅思体系", "5–25人线上直播大班，固定节奏推进听说读写基础与技巧", "适合入门、基础梳理、题型认知、方法建立和词汇打底", "适合作为后续小班/1V1冲刺前的基础段课程", "总部线上交付，课程标准化强，便于顾问快速匹配预算友好方案", "配套智慧学习系统、机考刷题和考前预测资料，方便课后自学巩固", "目标6.5/7.0以上可先用大班打底，再用1V1或小班解决输出短板", "写作/口语明显低的学生，推荐时明确提示不要只靠大班"],
     services: ["梯研配套资料", "智慧学习系统3个月", "1:1还原机考刷题", "背单词、检测单词并形成个性化学习报告", "写作预测题", "每场纸笔考前口语/写作预测", "考前后考情回访和分析", "优秀学员奖学金", "雅思考试代报名", "学辅期内无限次免费代报名", "入学测试/阶段测/全真模考", "无限次AI口语智能陪练", "课前导学计划", "结课复习计划"],
-    gifts: ["雅思备考资料包", "雅思核心词", "口语当季题库", "写作范文", "高频题资料", "机考练习资源", "智慧学习系统"],
+    gifts: ["雅思备考资料包", "雅思核心词", "口语当季题库", "写作范文", "高频题资料", "机考练习资源", "智慧学习系统3个月", "梯研配套资料", "写作预测题", "纸笔考前口语/写作预测资料"],
     risk: "大班适合系统学习和预算友好，但个性化弱于小班/1V1；写作/口语短板明显建议搭配1V1；目标7.0+不建议只靠大班完成。"
   },
   "线上小班": {
@@ -53,9 +53,9 @@ const serviceBundles = {
     risk: "线下适合自律性一般、需要环境带动的学生；写作/口语明显短板建议线下班课后接1V1；线下课不寄送讲义，学员线下上课时发放。"
   },
   "1V1": {
-    advantages: ["完全按照学生当前基础、小分短板和目标定制", "适合写作、口语这类需要批改、反馈、纠错的输出项", "适合时间不固定、无法跟班课节奏的学生", "适合目标高、需要冲刺小分的学生", "适合班课后查漏补缺和考前冲刺"],
+    advantages: ["完全按照学生当前基础、小分短板和目标定制，不被班级统一进度限制", "适合写作、口语这类需要批改、反馈、纠错的输出项", "适合时间不固定、无法跟班课节奏的学生，可围绕考试节奏排课", "适合目标高、需要冲刺小分的学生，尤其是6.5/7.0+写作口语卡分", "适合班课后查漏补缺和考前冲刺，把班课没吸收的题型方法转化为个人能力", "每次课2小时，便于集中完成讲解、练习、反馈、订正闭环", "可按听力/阅读输入项刷题纠错，也可按写作/口语输出项做精批和表达升级", "小时数越高单价越低，20H/40H/60H是顾问常用报价节点"],
     services: ["授课老师1V1答疑", "建立1V1私教群", "管促及检查学生作业完成情况", "学管跟进", "课后作业反馈", "免费考试报名", "学辅期内可免费考试代报名", "口语测评", "写作精批", "课前导学计划", "结课复习计划"],
-    gifts: ["雅思备考礼包", "电子词汇书", "雅思核心词", "口语当季题库", "写作范文", "高频题资料", "达到一定小时数赠送伴学服务/学习系统", "可按课程规则展示口语/写作训练权益"],
+    gifts: ["雅思备考礼包", "电子词汇书", "雅思核心词", "口语当季题库", "写作范文", "高频题资料", "达到一定小时数赠送伴学服务/学习系统", "可按课程规则展示口语/写作训练权益", "个性化课后作业清单", "阶段复习计划", "口语/写作批改反馈记录"],
     risk: "系统入门纯1V1成本较高，可考虑班课打底；写作/口语卡分时，1V1优先级高于大班；推荐1V1必须核对小时数、单价、总价、CP码。"
   },
   "班课+1V1": {
@@ -89,10 +89,10 @@ function product(base) {
 }
 
 const products = [
-  product({ id:"large-basic", category:"线上大班课", name:"紫藤基础班", deliveryMode:"线上", classType:"线上大班", classSize:"5–25人", level:"0基础/基础薄弱", target:"冲5分", suitable:"低基础入门、预算敏感学生", notSuitable:"目标6.5/7.0以上且需要强个性化反馈的学生。", originalPrice:9999, dailyPrice:6888, battlePrice:6888, cp:"—", retake:"无", rating:"性价比", scoreMin:0, scoreMax:4.5, targetMin:4.5, targetMax:5.0, totalHours:"约56H", mainHours:"系统基础段", liveHours:"线上直播大班", recordedHours:"配套录播/学习系统", supportPeriod:"12个月" }),
-  product({ id:"large-skill", category:"线上大班课", name:"紫藤技巧班", deliveryMode:"线上", classType:"线上大班", classSize:"5–25人", level:"5分左右", target:"冲6.5分", suitable:"已有一定基础，需要技巧和方法提升的学生", notSuitable:"写作/口语小分明显低且需要大量批改纠错的学生。", originalPrice:9999, dailyPrice:6888, battlePrice:6888, cp:"—", retake:"无", rating:"性价比", scoreMin:4.8, scoreMax:5.8, targetMin:6.0, targetMax:6.5, totalHours:"约56H", mainHours:"技巧主课", liveHours:"线上直播大班", recordedHours:"配套录播/学习系统", supportPeriod:"12个月" }),
-  product({ id:"large-65-full", category:"线上大班课", name:"雅思6.5分全程班", deliveryMode:"线上", classType:"线上大班", classSize:"5–25人", level:"0基础/基础薄弱", target:"冲6.5分", suitable:"基础弱但想系统冲6.5的学生；基础薄弱+技巧班连报", notSuitable:"目标7.0+且小分要求高、需要强反馈的学生。", originalPrice:18800, dailyPrice:12800, battlePrice:12800, cp:"—", retake:"无", rating:"性价比", scoreMin:0, scoreMax:4.5, targetMin:6.0, targetMax:6.5, totalHours:"约144H", mainHours:"基础段+技巧段", liveHours:"线上直播大班", recordedHours:"配套录播/学习系统", supportPeriod:"18个月" }),
-  product({ id:"large-single", category:"线上大班课", name:"雅思技巧班单科", deliveryMode:"线上", classType:"线上大班", classSize:"5–25人", level:"单科基础5分", target:"单科冲6.5分", suitable:"只想补单项方法的学生", notSuitable:"单项差距大、需要持续批改反馈的学生。", totalHours:"14H", mainHours:"单科技巧课", liveHours:"线上直播大班", originalPrice:2599, dailyPrice:1999, battlePrice:1999, cp:"—", retake:"无", rating:"补弱专项", scoreMin:5, scoreMax:6, targetMin:6, targetMax:6.5 }),
+  product({ id:"large-basic", category:"线上大班课", name:"紫藤基础班", deliveryMode:"线上", classType:"线上大班", classSize:"5–25人", level:"0基础/基础薄弱", target:"冲5分", suitable:"低基础入门、预算敏感学生", notSuitable:"目标6.5/7.0以上且需要强个性化反馈的学生。", originalPrice:9999, dailyPrice:6888, battlePrice:6888, cp:"CPB-136793", retake:"无", rating:"性价比", scoreMin:0, scoreMax:4.5, targetMin:4.5, targetMax:5.0, totalHours:"88H", mainHours:"56H主课", liveHours:"32H考前直播（一阶~二阶）", recordedHours:"不含录播，配套智慧学习系统", supportPeriod:"12个月" }),
+  product({ id:"large-skill", category:"线上大班课", name:"紫藤技巧班", deliveryMode:"线上", classType:"线上大班", classSize:"5–25人", level:"5分左右", target:"冲6.5分", suitable:"已有一定基础，需要技巧和方法提升的学生", notSuitable:"写作/口语小分明显低且需要大量批改纠错的学生。", originalPrice:9999, dailyPrice:6888, battlePrice:6888, cp:"CPB-136829", retake:"无", rating:"性价比", scoreMin:4.8, scoreMax:5.8, targetMin:6.0, targetMax:6.5, totalHours:"88H", mainHours:"56H主课", liveHours:"32H考前直播（一阶~二阶）", recordedHours:"不含录播，配套智慧学习系统", supportPeriod:"12个月" }),
+  product({ id:"large-65-full", category:"线上大班课", name:"雅思6.5分全程班", deliveryMode:"线上", classType:"线上大班", classSize:"5–25人", level:"0基础/基础薄弱", target:"冲6.5分", suitable:"基础弱但想系统冲6.5的学生；基础薄弱+技巧班连报", notSuitable:"目标7.0+且小分要求高、需要强反馈的学生。", originalPrice:18800, dailyPrice:12800, battlePrice:12800, cp:"CPB-136837", retake:"无", rating:"性价比", scoreMin:0, scoreMax:4.5, targetMin:6.0, targetMax:6.5, totalHours:"144H", mainHours:"112H主课（基础段+技巧段）", liveHours:"32H考前直播（一阶~二阶）", recordedHours:"不含录播，配套智慧学习系统", supportPeriod:"18个月" }),
+  product({ id:"large-single", category:"线上大班课", name:"雅思技巧班单科", deliveryMode:"线上", classType:"线上大班", classSize:"5–25人", level:"单科基础5分", target:"单科冲6.5分", suitable:"只想补单项方法的学生", notSuitable:"单项差距大、需要持续批改反馈的学生。", totalHours:"14H", mainHours:"单科技巧课", liveHours:"线上直播大班", originalPrice:2599, dailyPrice:1999, battlePrice:1999, cp:"听力CP-136846 / 口语CP-136855 / 阅读CP-136866 / 写作CP-136871", retake:"无", rating:"补弱专项", scoreMin:5, scoreMax:6, targetMin:6, targetMax:6.5 }),
 
   product({ id:"small-prep", category:"线上小班课", name:"紫藤雅思优学预备VIP小班", deliveryMode:"线上", classType:"线上小班", classSize:"3–10人", level:"基础4.0及以下", target:"冲4.5–5.0", suitable:"低基础线上小班入门", totalHours:"45H", mainHours:"24H", recordedHours:"21H", originalPrice:5080, dailyPrice:4580, battlePrice:4580, cp:"CPB-136811", retake:"有", retakeRule:"完课后三个月内未达4.5分可重修该课程。", rating:"主推", scoreMin:0, scoreMax:4.0, targetMin:4.5, targetMax:5.0, supportPeriod:"12个月" }),
   product({ id:"small-55", category:"线上小班课", name:"紫藤雅思优学5.5VIP小班", deliveryMode:"线上", classType:"线上小班", classSize:"3–10人", level:"基础4.5", target:"冲5.5", suitable:"4.5左右系统冲5.5", totalHours:"123H", mainHours:"64H", liveHours:"16H", recordedHours:"43H", originalPrice:13500, dailyPrice:12600, battlePrice:12600, cp:"CPB-136875", retake:"有", retakeRule:"达到入班基础4.5，完课后三个月内未达5.5可重修。", rating:"主推", scoreMin:4.5, scoreMax:5.0, targetMin:5.5, targetMax:5.5, supportPeriod:"12个月" }),
@@ -125,10 +125,23 @@ const products = [
 
 const oneOnOneCp = { 6:"CP-091068", 8:"CP-091069", 10:"CP-091070", 12:"CP-091071", 16:"CP-091072", 18:"CP-091073", 20:"CP-091074", 22:"CP-091075", 24:"CP-091076", 30:"CP-091078", 32:"CP-091079", 40:"CP-091080", 48:"CP-091081", 50:"CP-091082", 60:"CP-091083", 64:"CP-091084", 80:"CP-091085", 160:"CP-091087" };
 const oneOnOneHours = Object.keys(oneOnOneCp).map(Number).sort((a,b)=>a-b);
+const oneOnOnePriceBands = [
+  { range: "6–18小时", condition: "<20小时", rate: 720, use: "单项小幅补弱、考前点拨、口语/写作问题诊断" },
+  { range: "20–39小时", condition: "20–39小时", rate: 680, use: "总分提升0.5、写作/口语从5.0到6.0/6.5、常规输出项补弱" },
+  { range: "40–59小时", condition: "40–59小时", rate: 650, use: "总分提升1.0、目标6.5/7.0且小分短板明显" },
+  { range: "60小时及以上", condition: "≥60小时", rate: 600, use: "总分提升1.5及以上、低基础冲高分、长线系统私教" }
+];
+function get1v1Band(hours) {
+  if (hours < 20) return oneOnOnePriceBands[0];
+  if (hours < 40) return oneOnOnePriceBands[1];
+  if (hours < 60) return oneOnOnePriceBands[2];
+  return oneOnOnePriceBands[3];
+}
 
 Object.entries(oneOnOneCp).forEach(([hoursText, cp]) => {
   const hours = Number(hoursText);
   const rate = get1v1Rate(hours);
+  const band = get1v1Band(hours);
   products.push(product({
     id: `one-static-${hours}`,
     category: "线上/线下1V1",
@@ -145,6 +158,8 @@ Object.entries(oneOnOneCp).forEach(([hoursText, cp]) => {
     liveHours: "线上/线下可交付",
     recordedHours: "—",
     supportPeriod: hours < 20 ? "6个月" : "12个月",
+    hourRange: band.range,
+    unitPriceText: `${band.condition}：${rate}元/小时`,
     originalPrice: hours * 800,
     dailyPrice: hours * rate,
     battlePrice: hours * rate,
@@ -176,10 +191,11 @@ function nearestCpHours(hours) { return oneOnOneHours.find(h => h >= hours) || o
 function build1v1(hours, focus, reason) {
   const cpHours = nearestCpHours(hours);
   const rate = get1v1Rate(hours);
+  const band = get1v1Band(hours);
   const total = hours * rate;
   const official = hours * 800;
   return product({
-    id:`one-${hours}-${focus.join("-")}`, category:"线上/线下1V1", name:`紫藤雅思1V1 - ${hours}小时`, deliveryMode:"线上线下均可", classType:"1V1", classSize:"1人", level:"任何基础", target:"按学生目标定制", suitable:"需要定制化、单项短板明显、目标分较高、时间不适合班课、写作/口语弱、班课后补弱的学生", notSuitable:"只是系统入门且预算非常有限的学生，可先班课打底。", totalHours:`${hours}H（每次课2小时，约${Math.ceil(hours/2)}次课）`, mainHours:`${hours}H 1V1`, originalPrice:official, dailyPrice:total, battlePrice:total, cp:`${oneOnOneCp[cpHours]}（按${cpHours}小时CP码就近匹配）`, retake:"无", retakeRule:"1V1定制课通常不承诺重读，按实际课包服务执行。", suggestedWith1v1:"本身为1V1", rating:"补弱专项", scoreMin:0, scoreMax:7.5, targetMin:5, targetMax:7.5,
+    id:`one-${hours}-${focus.join("-")}`, category:"线上/线下1V1", name:`紫藤雅思1V1 - ${hours}小时`, deliveryMode:"线上线下均可", classType:"1V1", classSize:"1人", level:"任何基础", target:"按学生目标定制", suitable:"需要定制化、单项短板明显、目标分较高、时间不适合班课、写作/口语弱、班课后补弱的学生", notSuitable:"只是系统入门且预算非常有限的学生，可先班课打底。", totalHours:`${hours}H（每次课2小时，约${Math.ceil(hours/2)}次课）`, mainHours:`${hours}H 1V1`, originalPrice:official, dailyPrice:total, battlePrice:total, cp:`${oneOnOneCp[cpHours]}（按${cpHours}小时CP码就近匹配）`, retake:"无", retakeRule:"1V1定制课通常不承诺重读，按实际课包服务执行。", suggestedWith1v1:"本身为1V1", rating:"补弱专项", hourRange: band.range, unitPriceText: `${band.condition}：${rate}元/小时`, scoreMin:0, scoreMax:7.5, targetMin:5, targetMax:7.5,
     oneOnOne: { hours, rate, total, official, saved: official - total, focus: focus.map(s => skillLabels[s] || s), reason, cpHours }
   });
 }
@@ -239,33 +255,72 @@ function bestProduct(data, types, fallbackTypes = types) {
   return pool.sort((a,b) => scoreFit(b,data) - scoreFit(a,data) || a.battlePrice - b.battlePrice)[0];
 }
 
+function bestProducts(data, types, count = 3, fallbackTypes = types) {
+  const source = products.filter(p => types.includes(p.classType) && fitsDelivery(p, data.delivery));
+  const fallback = products.filter(p => fallbackTypes.includes(p.classType));
+  const pool = (source.length ? source : fallback)
+    .slice()
+    .sort((a,b) => scoreFit(b,data) - scoreFit(a,data) || a.battlePrice - b.battlePrice);
+  return pool.filter((item, index, array) => array.findIndex(p => p.id === item.id) === index).slice(0, count);
+}
+function buildSameTypePlans(positionProducts, data, analysis, one) {
+  const fallback = positionProducts[0] || one;
+  return [
+    buildPlan("主推方案", positionProducts[0] || fallback, data, analysis, one),
+    buildPlan("性价比方案", positionProducts[1] || fallback, data, analysis, one),
+    buildPlan("高保障方案", positionProducts[2] || positionProducts.at(-1) || fallback, data, analysis, one)
+  ];
+}
+
 function choosePlans(data, analysis) {
   const one = recommend1v1Hours(data, analysis);
+  const preference = data.classPreference;
+
+  if (preference === "oneOnOne") {
+    const baseHours = one.oneOnOne.hours;
+    const focus = analysis.weak.length ? analysis.weak : ["writing", "speaking"];
+    const valueHours = Math.max(10, baseHours >= 40 ? 24 : 16);
+    const guaranteeHours = Math.max(baseHours, data.gap >= 1.5 ? 60 : data.target >= 7 ? 40 : 32);
+    return buildSameTypePlans([
+      one,
+      build1v1(valueHours, focus, `按1V1偏好给出的性价比课包：先用${valueHours}H集中处理最急的小分短板。`),
+      build1v1(guaranteeHours, focus, `按1V1偏好给出的高保障课包：${guaranteeHours}H覆盖诊断、方法、练习、反馈和考前冲刺。`)
+    ], data, analysis, one);
+  }
+
+  const preferenceTypeMap = {
+    large: ["线上大班"],
+    small: ["线上小班"],
+    hybridClass: ["班课+1V1"],
+    flight: ["飞跃计划"]
+  };
+  if (preferenceTypeMap[preference]) {
+    return buildSameTypePlans(bestProducts(data, preferenceTypeMap[preference], 3), data, analysis, one);
+  }
+
   const preferOnline = data.delivery === "online";
   const preferOffline = data.delivery === "offline";
   let main;
-  if (data.budget === "guarantee" || data.classPreference === "flight") main = bestProduct(data, ["飞跃计划"], ["飞跃计划"]);
-  else if (data.classPreference === "oneOnOne" || analysis.totalEnoughSubNot || (analysis.outputWeak.length && data.target >= 7)) main = one;
-  else if (data.classPreference === "hybridClass" || data.gap >= 1.5 || analysis.outputWeak.length) main = bestProduct(data, ["班课+1V1"], ["班课+1V1"]);
+  if (data.budget === "guarantee") main = bestProduct(data, ["飞跃计划"], ["飞跃计划"]);
+  else if (analysis.totalEnoughSubNot || (analysis.outputWeak.length && data.target >= 7)) main = one;
+  else if (data.gap >= 1.5 || analysis.outputWeak.length) main = bestProduct(data, ["班课+1V1"], ["班课+1V1"]);
   else if (preferOffline) main = bestProduct(data, ["线下班课"], ["线下班课", "线上小班"]);
   else if (preferOnline) main = bestProduct(data, ["线上小班"], ["线上小班", "线上大班"]);
   else main = bestProduct(data, ["线上小班", "线下班课"], ["线上小班", "线下班课"]);
 
   let value;
-  if (data.classPreference === "small") value = bestProduct(data, ["线上小班"], ["线上小班"]);
-  else if (analysis.totalEnoughSubNot && analysis.inputWeak.length && data.delivery !== "online") value = products.find(p => p.classType === "单项课" && analysis.inputWeak.includes(p.subject)) || bestProduct(data, ["单项课"], ["单项课"]);
+  if (analysis.totalEnoughSubNot && analysis.inputWeak.length && data.delivery !== "online") value = products.find(p => p.classType === "单项课" && analysis.inputWeak.includes(p.subject)) || bestProduct(data, ["单项课"], ["单项课"]);
   else value = bestProduct({ ...data, delivery: data.delivery === "offline" ? "offline" : "online" }, ["线上大班"], ["线上大班"]);
 
-  let guarantee;
-  if (data.gap >= 1.5 || data.target >= 7 || data.budget === "guarantee") guarantee = bestProduct(data, ["飞跃计划"], ["飞跃计划"]);
-  else guarantee = bestProduct(data, ["班课+1V1"], ["班课+1V1"]);
+  const guarantee = data.gap >= 1.5 || data.target >= 7 || data.budget === "guarantee"
+    ? bestProduct(data, ["飞跃计划"], ["飞跃计划"])
+    : bestProduct(data, ["班课+1V1"], ["班课+1V1"]);
 
-  const plans = [
+  return [
     buildPlan("主推方案", main, data, analysis, one),
     buildPlan("性价比方案", value, data, analysis, one),
     buildPlan("高保障方案", guarantee, data, analysis, one)
   ];
-  return plans;
 }
 
 function buildPlan(position, p, data, analysis, one) {
@@ -311,6 +366,18 @@ function renderDiagnosis(data, analysis) {
   document.querySelector("#diagnosis-output").innerHTML = `<strong>学生情况诊断：</strong>${analysis.base}<br><strong>当前分数与目标差距：</strong>${data.currentScore} → ${data.targetScore}，差距${data.gap.toFixed(1)}分。<br><strong>小分短板判断：</strong>${subText}`;
 }
 
+function hourBreakdown(p) {
+  return [
+    `总课时：${p.totalHours}`,
+    `主课：${p.mainHours}`,
+    `直播/面授：${p.liveHours}`,
+    `录播：${p.recordedHours}`,
+    `学辅期：${p.supportPeriod}`,
+    p.hourRange ? `1V1小时区间：${p.hourRange}` : "",
+    p.unitPriceText ? `1V1阶梯单价：${p.unitPriceText}` : ""
+  ].filter(Boolean);
+}
+
 function renderRecommendations(plans) {
   document.querySelector("#recommendations").innerHTML = plans.map(plan => {
     const p = plan.product;
@@ -322,12 +389,12 @@ function renderRecommendations(plans) {
       <div class="detail-grid">
         <section><h4>适合原因</h4><p>${plan.reason}</p></section>
         <section><h4>学习顺序</h4><p>${plan.sequence}</p></section>
-        <section><h4>课时拆分</h4><p>总课时：${p.totalHours}；主课：${p.mainHours}；直播/面授：${p.liveHours}；录播：${p.recordedHours}；学辅期：${p.supportPeriod}。</p></section>
+        <section><h4>课时包含（主课/直播/录播/学辅期）</h4>${list(hourBreakdown(p))}</section>
         <section><h4>预计解决的问题</h4><p>${plan.expected}</p></section>
         <section><h4>价格与CP码</h4><p>原价：${yuan(plan.price.original)}；日常优惠价：${yuan(plan.price.daily)}；会战价/最低价：${yuan(plan.price.battle)}；CP码：${plan.cp}。</p>${plan.extra ? `<p class="highlight">${plan.extra}</p>` : ""}</section>
-        <section><h4>课程优势</h4>${list(p.advantages, 8)}</section>
-        <section><h4>配套服务</h4>${list(p.services, 10)}</section>
-        <section><h4>赠送资料/增值服务</h4>${list(p.gifts, 8)}</section>
+        <section><h4>课程优势（推荐时可直接讲）</h4>${list(p.advantages)}</section>
+        <section><h4>配套服务</h4>${list(p.services)}</section>
+        <section><h4>赠送资料/增值服务</h4>${list(p.gifts)}</section>
         <section><h4>可重读/补偿</h4><p>${p.retake}；${p.retakeRule}</p></section>
         <section><h4>适合人群</h4><p>${p.suitable}</p></section>
         <section><h4>不适合人群</h4><p>${p.notSuitable}</p></section>
@@ -342,7 +409,7 @@ function scriptsFor(data, analysis, plans) {
   const internal = [`【内部顾问版】`, `1. 学生情况诊断：${analysis.base}`, `2. 当前分数与目标差距：${data.currentScore} → ${data.targetScore}，差距${data.gap.toFixed(1)}分。`, `3. 小分短板判断：${analysis.noSubscores ? "小分未填，建议补充小分或先做入学测试。" : analysis.weak.length ? analysis.weak.map(k=>skillLabels[k]).join("、") : "暂未发现明显短板。"}`,
     ...plans.map((plan, idx) => {
       const p = plan.product;
-      return `\n${idx+4}. 推荐方案${idx+1}：${plan.position}\n- 推荐课程名称：${p.name}\n- 班型/形式：${p.classType} / ${p.deliveryMode}\n- 适合原因：${plan.reason}\n- 课程顺序：${plan.sequence}\n- 课时拆分：总课时${p.totalHours}；主课${p.mainHours}；直播/面授${p.liveHours}；录播${p.recordedHours}；学辅期${p.supportPeriod}\n- 价格明细：原价${yuan(p.originalPrice)}；日常优惠${yuan(p.dailyPrice)}；会战/最低${yuan(p.battlePrice)}\n- CP码：${p.cp}\n${plan.extra ? `- 1V1/组合测算：${plan.extra}\n` : ""}- 课程优势：${p.advantages.join("；")}\n- 配套服务：${p.services.join("；")}\n- 赠送资料：${p.gifts.join("；")}\n- 重读/补偿：${p.retake}；${p.retakeRule}\n- 风险提示：${p.risk}\n- 下一步动作：${plan.next}`;
+      return `\n${idx+4}. 推荐方案${idx+1}：${plan.position}\n- 推荐课程名称：${p.name}\n- 班型/形式：${p.classType} / ${p.deliveryMode}\n- 适合原因：${plan.reason}\n- 课程顺序：${plan.sequence}\n- 课时包含：${hourBreakdown(p).join("；")}\n- 价格明细：原价${yuan(p.originalPrice)}；日常优惠${yuan(p.dailyPrice)}；会战/最低${yuan(p.battlePrice)}\n- CP码：${p.cp}\n${plan.extra ? `- 1V1/组合测算：${plan.extra}\n` : ""}- 课程优势：${p.advantages.join("；")}\n- 配套服务：${p.services.join("；")}\n- 赠送资料：${p.gifts.join("；")}\n- 重读/补偿：${p.retake}；${p.retakeRule}\n- 风险提示：${p.risk}\n- 下一步动作：${plan.next}`;
     })].join("\n");
 
   const main = plans[0];
@@ -428,6 +495,17 @@ function initConverter() {
   renderConversionTables();
 }
 
+function renderQuickSections() {
+  const largeBox = document.querySelector("#online-large-quick");
+  if (largeBox) {
+    largeBox.innerHTML = products.filter(p => p.classType === "线上大班").map(p => `<article class="quick-card"><h4>${p.name}</h4><p><b>适合：</b>${p.level}，${p.target}</p><p><b>课时：</b>${hourBreakdown(p).join("；")}</p><p><b>价格：</b>原价${yuan(p.originalPrice)} / 优惠${yuan(p.dailyPrice)} / 会战${yuan(p.battlePrice)}</p><p><b>CP：</b>${p.cp}</p><p><b>资料：</b>${p.gifts.join("、")}</p></article>`).join("");
+  }
+  const rateBox = document.querySelector("#one-on-one-rate-table");
+  if (rateBox) {
+    rateBox.innerHTML = `<table><thead><tr><th>小时区间</th><th>单价</th><th>适合场景</th></tr></thead><tbody>${oneOnOnePriceBands.map(b => `<tr><td>${b.range}<br><small>${b.condition}</small></td><td>${b.rate}元/小时</td><td>${b.use}</td></tr>`).join("")}</tbody></table>`;
+  }
+}
+
 function renderProductTable() {
   const delivery = document.querySelector("#filter-delivery").value;
   const type = document.querySelector("#filter-type").value;
@@ -444,7 +522,7 @@ function renderProductTable() {
   document.querySelector("#product-table").innerHTML = categoryOrder.map(typeName => {
     const categoryRows = rows.filter(p => p.classType === typeName);
     if (!categoryRows.length) return "";
-    return `<article class="category-block"><h3>${typeName}</h3><div class="table-wrap"><table><thead><tr><th>产品名称</th><th>形式</th><th>人数</th><th>适合基础</th><th>目标分</th><th>课时</th><th>价格</th><th>CP码</th><th>重读/补偿</th><th>查看课程详情</th></tr></thead><tbody>${categoryRows.map(p => `<tr><td><b>${p.name}</b><br><small>${p.suitable}</small></td><td>${p.deliveryMode}</td><td>${p.classSize}</td><td>${p.level}</td><td>${p.target}</td><td>${p.totalHours}</td><td>原${yuan(p.originalPrice)}<br>日${yuan(p.dailyPrice)}<br>会${yuan(p.battlePrice)}</td><td>${p.cp}</td><td>${p.retake}<br><small>${p.retakeRule}</small></td><td><details><summary>详情</summary><p><b>不适合：</b>${p.notSuitable}</p><p><b>优势：</b>${p.advantages.join("；")}</p><p><b>服务：</b>${p.services.join("；")}</p><p><b>资料：</b>${p.gifts.join("；")}</p><p><b>风险：</b>${p.risk}</p></details></td></tr>`).join("")}</tbody></table></div></article>`;
+    return `<article class="category-block"><h3>${typeName}</h3><div class="table-wrap"><table><thead><tr><th>产品名称</th><th>形式</th><th>人数</th><th>适合基础</th><th>目标分</th><th>总课时</th><th>主课/直播/录播</th><th>价格</th><th>CP码</th><th>重读/补偿</th><th>查看课程详情</th></tr></thead><tbody>${categoryRows.map(p => `<tr><td><b>${p.name}</b><br><small>${p.suitable}</small></td><td>${p.deliveryMode}</td><td>${p.classSize}</td><td>${p.level}</td><td>${p.target}</td><td>${p.totalHours}<br><small>${p.hourRange ? `1V1区间：${p.hourRange}<br>${p.unitPriceText}` : ""}</small></td><td>主课：${p.mainHours}<br>直播/面授：${p.liveHours}<br>录播：${p.recordedHours}<br>学辅期：${p.supportPeriod}</td><td>原${yuan(p.originalPrice)}<br>日${yuan(p.dailyPrice)}<br>会${yuan(p.battlePrice)}</td><td>${p.cp}</td><td>${p.retake}<br><small>${p.retakeRule}</small></td><td><details><summary>详情</summary><p><b>不适合：</b>${p.notSuitable}</p><p><b>优势：</b>${p.advantages.join("；")}</p><p><b>服务：</b>${p.services.join("；")}</p><p><b>资料：</b>${p.gifts.join("；")}</p><p><b>风险：</b>${p.risk}</p></details></td></tr>`).join("")}</tbody></table></div></article>`;
   }).join("") || `<p class="empty">当前筛选无产品，请放宽筛选条件。</p>`;
 }
 
@@ -470,6 +548,7 @@ function init() {
     catch { document.querySelector(`#${btn.dataset.copy}`).select(); document.execCommand("copy"); showToast("已复制"); }
   }));
   initConverter();
+  renderQuickSections();
   renderProductTable();
   runMatch();
 }
