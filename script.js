@@ -8,6 +8,31 @@ const brandAdvantages = [
   "高顿紫藤国际教育雅思项目", "雅思教师强调官方认证和单科高分", "听说读写分科授课", "线上/线下均有课程", "线下超小班，3人开班", "线上直播小班", "线上大班，适合预算友好型学生", "1V1可定制", "入学测评", "学管督学", "阶段测试", "模考反馈", "课后答疑", "作业批改", "写作精批", "口语点评", "外教口语模考", "口语题库/预测资料", "高频题资料", "自研教材和题库更新", "结课复习规划", "奖学金机制", "推荐金机制", "部分课程满足条件可申请重读"
 ];
 
+
+const conversionConfigs = {
+  toeflOld: { label: "老托福 / TOEFL iBT（满分120）", unit: "分", max: 120, source: "图中换算表", ranges: [
+    { min: 118, max: 120, ielts: "9.0" }, { min: 115, max: 117, ielts: "8.5" }, { min: 110, max: 114, ielts: "8.0" }, { min: 102, max: 109, ielts: "7.5" }, { min: 94, max: 101, ielts: "7.0" }, { min: 87, max: 93, ielts: "6.5" }, { min: 79, max: 86, ielts: "6.0" }, { min: 60, max: 78, ielts: "5.5" }, { min: 46, max: 59, ielts: "5.0" }, { min: 35, max: 45, ielts: "4.5" }, { min: 32, max: 34, ielts: "4.0" }, { min: 0, max: 31, ielts: "0-3.5" }
+  ] },
+  toeflNew: { label: "新托福（满分6）", unit: "分", max: 6, source: "图中换算表", ranges: [
+    { min: 6, max: 6, ielts: "8.5-9.0" }, { min: 5.5, max: 5.5, ielts: "7.5-8.0" }, { min: 5, max: 5, ielts: "7.0" }, { min: 4.5, max: 4.5, ielts: "6.5" }, { min: 4, max: 4, ielts: "6.0" }, { min: 3.5, max: 3.5, ielts: "5.5" }, { min: 3, max: 3, ielts: "5.0" }, { min: 2.5, max: 2.5, ielts: "4.5" }, { min: 2, max: 2, ielts: "4.0" }, { min: 0, max: 1.5, ielts: "0-3.5" }
+  ] },
+  cet4: { label: "英语四级 CET-4（满分710）", unit: "分", max: 710, source: "图中换算表", ranges: [
+    { min: 680, max: 710, ielts: "9.0" }, { min: 666, max: 679, ielts: "8.5" }, { min: 650, max: 665, ielts: "8.0" }, { min: 636, max: 649, ielts: "7.5" }, { min: 620, max: 635, ielts: "7.0" }, { min: 597, max: 619, ielts: "6.5" }, { min: 574, max: 596, ielts: "6.0" }, { min: 550, max: 573, ielts: "5.5" }, { min: 488, max: 549, ielts: "5.0" }, { min: 420, max: 487, ielts: "4.5" }, { min: 211, max: 419, ielts: "4.0" }, { min: 0, max: 210, ielts: "0-3.5" }
+  ] },
+  cet6: { label: "英语六级 CET-6（满分710）", unit: "分", max: 710, source: "图中换算表", ranges: [
+    { min: 660, max: 710, ielts: "9.0" }, { min: 646, max: 659, ielts: "8.5" }, { min: 630, max: 645, ielts: "8.0" }, { min: 605, max: 629, ielts: "7.5" }, { min: 580, max: 604, ielts: "7.0" }, { min: 556, max: 579, ielts: "6.5" }, { min: 528, max: 555, ielts: "6.0" }, { min: 500, max: 527, ielts: "5.5" }, { min: 451, max: 499, ielts: "5.0" }, { min: 401, max: 450, ielts: "4.5" }, { min: 201, max: 400, ielts: "4.0" }, { min: 0, max: 200, ielts: "0-3.5" }
+  ] },
+  internal60: { label: "紫藤雅思入班测试（满分60）", unit: "分", max: 60, source: "内部60分钟测试对标表", ranges: [
+    { min: 55, max: 60, ielts: "≥6.5" }, { min: 44, max: 54, ielts: "6.0" }, { min: 38, max: 43, ielts: "5.5" }, { min: 27, max: 37, ielts: "5.0" }, { min: 21, max: 26, ielts: "4.5" }, { min: 0, max: 20, ielts: "≤4.0" }
+  ] },
+  postgradEnglish: { label: "考研英语（满分100）", unit: "分", max: 100, source: "咨询内部分层参考", ranges: [
+    { min: 85, max: 100, ielts: "7.5" }, { min: 78, max: 84, ielts: "7.0" }, { min: 70, max: 77, ielts: "6.5" }, { min: 62, max: 69, ielts: "6.0" }, { min: 54, max: 61, ielts: "5.5" }, { min: 46, max: 53, ielts: "5.0" }, { min: 38, max: 45, ielts: "4.5" }, { min: 0, max: 37, ielts: "≤4.0" }
+  ] },
+  gaokaoEnglish: { label: "高考英语（按150分制折算）", unit: "分", max: 150, source: "咨询内部分层参考", ranges: [
+    { min: 140, max: 150, ielts: "7.5" }, { min: 130, max: 139, ielts: "7.0" }, { min: 120, max: 129, ielts: "6.5" }, { min: 110, max: 119, ielts: "6.0" }, { min: 100, max: 109, ielts: "5.5" }, { min: 90, max: 99, ielts: "5.0" }, { min: 75, max: 89, ielts: "4.5" }, { min: 0, max: 74, ielts: "≤4.0" }
+  ] }
+};
+
 const serviceBundles = {
   "线上大班": {
     advantages: ["价格更友好，适合预算敏感学生", "系统学习雅思基础题型和方法", "适合入门、基础梳理、技巧建立", "可作为后续小班/1V1冲刺前的基础段课程"],
@@ -327,6 +352,82 @@ function scriptsFor(data, analysis, plans) {
   document.querySelector("#parent-script").value = parent;
 }
 
+
+function formatConversionRange(range, unit = "分") {
+  if (range.min === range.max) return `${range.min}${unit}`;
+  if (range.min === 0) return `≤${range.max}${unit}`;
+  return `${range.min}-${range.max}${unit}`;
+}
+function findConversion(config, score) {
+  return config.ranges.find(range => score >= range.min && score <= range.max) || null;
+}
+function updateConverterBounds() {
+  const sourceExam = document.querySelector("#source-exam");
+  const sourceScore = document.querySelector("#source-score");
+  const gaokaoMax = document.querySelector("#gaokao-max");
+  const gaokaoMaxLabel = document.querySelector("#gaokao-max-label");
+  if (!sourceExam || !sourceScore) return;
+  const config = conversionConfigs[sourceExam.value];
+  const max = sourceExam.value === "gaokaoEnglish" ? gaokaoMax.value : config.max;
+  sourceScore.max = max;
+  sourceScore.placeholder = `0-${max}`;
+  gaokaoMaxLabel?.classList.toggle("is-hidden", sourceExam.value !== "gaokaoEnglish");
+}
+function applyConvertedScore(ieltsText) {
+  const matches = ieltsText.match(/\d+(?:\.\d+)?/g);
+  if (!matches) return;
+  const numeric = Math.min(Number(matches[matches.length - 1]), 7);
+  const currentSelect = document.querySelector("#current-score");
+  const options = [...currentSelect.options].map(option => Number(option.value));
+  const closest = options.reduce((best, value) => Math.abs(value - numeric) < Math.abs(best - numeric) ? value : best, options[0]);
+  currentSelect.value = closest.toFixed(1);
+  runMatch();
+  showToast("已填入当前雅思总分");
+}
+function renderConversionResult(event) {
+  event?.preventDefault();
+  const sourceExam = document.querySelector("#source-exam");
+  const sourceScore = document.querySelector("#source-score");
+  const gaokaoMax = document.querySelector("#gaokao-max");
+  const result = document.querySelector("#conversion-result");
+  const config = conversionConfigs[sourceExam.value];
+  const raw = Number(sourceScore.value);
+  if (Number.isNaN(raw) || raw < 0) {
+    result.innerHTML = `<p class="conversion-error">请输入有效分数。</p>`;
+    return;
+  }
+  const maxScore = sourceExam.value === "gaokaoEnglish" ? Number(gaokaoMax.value) : config.max;
+  if (raw > maxScore) {
+    result.innerHTML = `<p class="conversion-error">${config.label} 当前满分为 ${maxScore} 分，请检查输入。</p>`;
+    return;
+  }
+  const normalized = sourceExam.value === "gaokaoEnglish" ? Math.round((raw / maxScore) * 1500) / 10 : raw;
+  const match = findConversion(config, normalized);
+  if (!match) {
+    result.innerHTML = `<p class="conversion-error">暂未找到对应区间，请检查分数或换算表。</p>`;
+    return;
+  }
+  const note = sourceExam.value === "gaokaoEnglish" && maxScore !== 150 ? `已按 ${raw}/${maxScore} 折算为 ${normalized}/150 后匹配。` : "";
+  result.innerHTML = `<article class="conversion-card"><span>参考雅思分</span><strong>${match.ielts}</strong><p>${config.label} ${raw}${config.unit}，落在 ${formatConversionRange(match, config.unit)} 区间。${note}</p><small>依据：${config.source}；仅作咨询分层，不替代正式 IELTS 成绩。</small><button type="button" class="secondary-btn" id="apply-conversion">填入目前雅思总分</button></article>`;
+  document.querySelector("#apply-conversion").addEventListener("click", () => applyConvertedScore(match.ielts));
+}
+function renderConversionTables() {
+  const container = document.querySelector("#conversion-tables");
+  if (!container) return;
+  container.innerHTML = Object.values(conversionConfigs).map(config => `<article class="conversion-table-card"><h3>${config.label}</h3><p>${config.source}</p><table><thead><tr><th>原考试分数</th><th>参考雅思</th></tr></thead><tbody>${config.ranges.map(range => `<tr><td>${formatConversionRange(range, config.unit)}</td><td>${range.ielts}</td></tr>`).join("")}</tbody></table></article>`).join("");
+}
+function initConverter() {
+  const converterForm = document.querySelector("#converter-form");
+  const sourceExam = document.querySelector("#source-exam");
+  const gaokaoMax = document.querySelector("#gaokao-max");
+  if (!converterForm || !sourceExam) return;
+  sourceExam.addEventListener("change", updateConverterBounds);
+  gaokaoMax?.addEventListener("change", updateConverterBounds);
+  converterForm.addEventListener("submit", renderConversionResult);
+  updateConverterBounds();
+  renderConversionTables();
+}
+
 function renderProductTable() {
   const delivery = document.querySelector("#filter-delivery").value;
   const type = document.querySelector("#filter-type").value;
@@ -368,6 +469,7 @@ function init() {
     try { await navigator.clipboard.writeText(text); showToast("已复制"); }
     catch { document.querySelector(`#${btn.dataset.copy}`).select(); document.execCommand("copy"); showToast("已复制"); }
   }));
+  initConverter();
   renderProductTable();
   runMatch();
 }
