@@ -32,3 +32,7 @@ python3 -m http.server 4173
 课程数据集中维护在 `script.js` 的 `products` 数组和 `serviceBundles` 对象中。后续如果官方价、最低价、课时、CP 码、服务内容、赠送资料或重读/补偿规则有更新，可直接替换对应字段。
 
 分数换算数据集中维护在 `script.js` 的 `conversionConfigs` 对象中。托福/四六级、内部 60 分钟测试按图中区间录入；考研英语和高考英语为咨询内部分层参考，可按后续校区标准调整区间。
+
+## 合并冲突处理说明
+
+当前 PR 分支以新版 IELTS product matcher 工具为准；若 main 分支旧页面、旧产品数组或旧样式与本工具冲突，保留本工具的输入区、推荐结果、1V1 价格计算、可复制话术、产品库筛选和分数换算功能。`README.md`、`index.html`、`script.js`、`styles.css` 均应保持无 Git conflict markers。
