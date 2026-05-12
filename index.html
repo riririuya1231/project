@@ -3,204 +3,182 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>雅思课程咨询方案生成器</title>
+    <title>雅思产品匹配工具｜高顿紫藤内部顾问版</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <main class="app-shell">
       <section class="hero" aria-labelledby="page-title">
         <div>
-          <p class="eyebrow">IELTS Consultation Planner</p>
-          <h1 id="page-title">雅思课程咨询方案生成器</h1>
-          <p class="hero-copy">
-            自用版咨询话术工具：输入总分和目标分，小分可选填，系统会自动判断补单项还是全科，生成班课、一对一加班课和飞跃计划组合方案，附官方价、最低价、课时、服务与推荐话术。
-          </p>
+          <p class="eyebrow">Internal IELTS Product Matcher</p>
+          <h1 id="page-title">雅思产品匹配工具</h1>
+          <p class="hero-copy">顾问内部自用页面：根据学生当前总分、目标分、小分短板、线上/线下偏好、班型偏好和预算敏感度，自动匹配高顿紫藤雅思课程，并生成可直接复制的内部顾问版方案与学生/家长话术。</p>
         </div>
-        <div class="hero-card" aria-label="咨询流程说明">
-          <span class="hero-card__number">3</span>
-          <span>步生成可讲方案</span>
+        <div class="hero-card">
+          <strong>只做雅思</strong>
+          <span>线上大班 / 线上小班 / 线下班课 / 1V1 / 组合 / 飞跃 / 单项课分开展示</span>
         </div>
       </section>
 
-      <section class="info-panel" aria-labelledby="intro-title">
-        <div class="section-heading">
-          <p class="eyebrow">Before Matching</p>
-          <h2 id="intro-title">咨询前可先铺垫的信息</h2>
-        </div>
-        <div class="info-grid">
-          <article>
-            <h3>机构优势可讲</h3>
-            <ul>
-              <li>全科预备、全能班、连报、私教 1V1、飞跃计划覆盖不同基础和预算。</li>
-              <li>班课负责搭框架和带节奏，1V1 负责诊断薄弱项、定制补课和临考冲刺。</li>
-              <li>配套学习系统、课前/结课学习计划、口语测评、写作精批、阶段/全真模考与督导服务。</li>
-            </ul>
-          </article>
-          <article>
-            <h3>雅思分数常见用途</h3>
-            <ul>
-              <li>5.5：预科、语言班、部分交换/基础申请门槛常见要求。</li>
-              <li>6.0-6.5：本科/硕士正课常见区间，6.5 是多数学生主流目标。</li>
-              <li>7.0+：高排名院校、传媒/教育/法学等专业或奖学金申请更常见。</li>
-            </ul>
-          </article>
-          <article>
-            <h3>推荐逻辑</h3>
-            <ul>
-              <li>不再按备考时间硬匹配，先看当前总分、目标总分和小分短板。</li>
-              <li>小分未填：优先给全科体系课；小分已填：单项落差明显时推荐单项 1V1 加班课。</li>
-              <li>目标提升越大，越建议“班课/飞跃计划 + 1V1”组合，降低卡分风险。</li>
-            </ul>
-          </article>
-        </div>
+      <section class="top-modules" aria-label="固定信息模块">
+        <article class="info-card brand-card">
+          <p class="eyebrow">Brand</p>
+          <h2>高顿紫藤国际教育雅思项目优势</h2>
+          <div id="brand-points" class="chip-list"></div>
+        </article>
+        <article class="info-card">
+          <p class="eyebrow">Score Usage</p>
+          <h2>雅思分数用途参考</h2>
+          <ul>
+            <li>本科/硕士留学常见要求：6.0、6.5、7.0、7.5；英国、澳洲、中国香港、新加坡等地区和项目会有不同要求。</li>
+            <li>移民、考研/保研、外企、公务员、奖学金、单纯提升英语能力等也常参考雅思成绩。</li>
+            <li class="warning">备注：此模块只做用途展示，不生成留学申请方案；具体要求以院校、项目、移民局或单位官方要求为准。</li>
+          </ul>
+        </article>
+        <article class="info-card">
+          <p class="eyebrow">Diagnosis</p>
+          <h2>雅思分数诊断</h2>
+          <ul>
+            <li><b>4.0及以下：</b>基础薄弱，先补雅思基础、词汇、题型认知和基本方法。</li>
+            <li><b>4.5左右：</b>有基础但雅思体系和方法薄弱，适合预备/一阶课程。</li>
+            <li><b>5.0–5.5：</b>方法、速度、输出稳定性不足，适合一阶/二阶课程。</li>
+            <li><b>6.0–6.5：</b>强化技巧、补短板、冲6.5/7.0，尤其看写作口语。</li>
+            <li><b>6.5以上：</b>高分段冲刺，重点突破写作、口语和小分要求。</li>
+          </ul>
+        </article>
       </section>
 
-      <section class="matcher-card" aria-labelledby="form-title">
-        <div class="section-heading">
-          <p class="eyebrow">Step 1</p>
-          <h2 id="form-title">填写学生情况</h2>
+
+      <section class="converter-section" aria-labelledby="converter-title">
+        <div class="section-heading inline-heading">
+          <div>
+            <p class="eyebrow">Main Branch Tool Preserved</p>
+            <h2 id="converter-title">雅思分数换算工具</h2>
+            <p class="muted">保留 main 分支已有可用内容：支持托福、四六级、紫藤入班 60 分钟测试、考研英语和高考英语换算为参考雅思分。换算仅用于咨询分层，不替代正式 IELTS 成绩。</p>
+          </div>
         </div>
-        <form id="matcher-form" class="matcher-form">
-          <label>
-            目前雅思总分
-            <select id="current-score" name="currentScore" required>
-              <option value="4.0">4.0 或以下</option>
-              <option value="4.5">4.5</option>
-              <option value="5.0" selected>5.0</option>
-              <option value="5.5">5.5</option>
-              <option value="6.0">6.0</option>
-              <option value="6.5">6.5</option>
-              <option value="7.0">7.0+</option>
+        <form id="converter-form" class="converter-form">
+          <label>考试类型
+            <select id="source-exam" name="sourceExam">
+              <option value="toeflOld">老托福 / TOEFL iBT（满分120）</option>
+              <option value="toeflNew">新托福（满分6）</option>
+              <option value="cet4">英语四级 CET-4（满分710）</option>
+              <option value="cet6">英语六级 CET-6（满分710）</option>
+              <option value="internal60">紫藤雅思入班测试（满分60）</option>
+              <option value="postgradEnglish">考研英语（满分100）</option>
+              <option value="gaokaoEnglish">高考英语（默认满分150）</option>
             </select>
           </label>
-
-          <label>
-            目标雅思总分
-            <select id="target-score" name="targetScore" required>
-              <option value="5.5">5.5</option>
-              <option value="6.0">6.0</option>
-              <option value="6.5" selected>6.5</option>
-              <option value="7.0">7.0</option>
-              <option value="7.5">7.5+</option>
-            </select>
+          <label>测试分数<input id="source-score" name="sourceScore" type="number" min="0" step="0.5" placeholder="0-120" /></label>
+          <label id="gaokao-max-label" class="is-hidden">高考英语满分
+            <select id="gaokao-max" name="gaokaoMax"><option value="150">150 分</option><option value="120">120 分</option><option value="100">100 分</option></select>
           </label>
-
-          <fieldset>
-            <legend>上课方式</legend>
-            <label class="radio-card">
-              <input type="radio" name="delivery" value="online" checked />
-              <span>线上</span>
-            </label>
-            <label class="radio-card">
-              <input type="radio" name="delivery" value="offline" />
-              <span>线下</span>
-            </label>
-            <label class="radio-card">
-              <input type="radio" name="delivery" value="hybrid" />
-              <span>线上 + 线下</span>
-            </label>
-          </fieldset>
-
-          <fieldset>
-            <legend>课程偏好</legend>
-            <label class="radio-card">
-              <input type="radio" name="courseType" value="any" checked />
-              <span>自动推荐</span>
-            </label>
-            <label class="radio-card">
-              <input type="radio" name="courseType" value="group" />
-              <span>班课</span>
-            </label>
-            <label class="radio-card">
-              <input type="radio" name="courseType" value="oneOnOne" />
-              <span>1V1 加班课</span>
-            </label>
-            <label class="radio-card">
-              <input type="radio" name="courseType" value="combo" />
-              <span>组合/飞跃</span>
-            </label>
-          </fieldset>
-
-          <fieldset class="subscore-fieldset">
-            <legend>小分选填：有成绩就填，没有可空</legend>
-            <label>
-              听力
-              <select name="listeningScore">
-                <option value="">未填</option>
-                <option value="4.0">4.0</option><option value="4.5">4.5</option><option value="5.0">5.0</option><option value="5.5">5.5</option><option value="6.0">6.0</option><option value="6.5">6.5</option><option value="7.0">7.0</option><option value="7.5">7.5+</option>
-              </select>
-            </label>
-            <label>
-              阅读
-              <select name="readingScore">
-                <option value="">未填</option>
-                <option value="4.0">4.0</option><option value="4.5">4.5</option><option value="5.0">5.0</option><option value="5.5">5.5</option><option value="6.0">6.0</option><option value="6.5">6.5</option><option value="7.0">7.0</option><option value="7.5">7.5+</option>
-              </select>
-            </label>
-            <label>
-              口语
-              <select name="speakingScore">
-                <option value="">未填</option>
-                <option value="4.0">4.0</option><option value="4.5">4.5</option><option value="5.0">5.0</option><option value="5.5">5.5</option><option value="6.0">6.0</option><option value="6.5">6.5</option><option value="7.0">7.0</option><option value="7.5">7.5+</option>
-              </select>
-            </label>
-            <label>
-              写作
-              <select name="writingScore">
-                <option value="">未填</option>
-                <option value="4.0">4.0</option><option value="4.5">4.5</option><option value="5.0">5.0</option><option value="5.5">5.5</option><option value="6.0">6.0</option><option value="6.5">6.5</option><option value="7.0">7.0</option><option value="7.5">7.5+</option>
-              </select>
-            </label>
-          </fieldset>
-
-          <button type="submit">生成咨询方案</button>
+          <button type="submit" class="primary-btn">换算雅思</button>
         </form>
+        <div id="conversion-result" class="conversion-result">请输入原考试分数后换算参考雅思分，可一键填入当前雅思总分继续匹配产品。</div>
+        <details class="conversion-reference">
+          <summary>查看全部换算参考表</summary>
+          <div id="conversion-tables" class="conversion-tables"></div>
+        </details>
       </section>
 
-      <section class="plan-section" aria-labelledby="plan-title">
-        <div class="section-heading">
-          <p class="eyebrow">Step 2</p>
-          <h2 id="plan-title">可直接讲给学生的方案</h2>
-          <p id="match-summary" class="muted">已根据默认条件生成方案；不按时间匹配，价格按产品表展示，成交价以实际政策为准。</p>
+
+      <section class="quick-section" aria-labelledby="quick-title">
+        <div class="section-heading inline-heading">
+          <div>
+            <p class="eyebrow">Product Snapshot</p>
+            <h2 id="quick-title">产品速览：线上大班课 & 1V1价格阶梯</h2>
+            <p class="muted">先快速确认线上大班是否适合预算优先学生，再查看1V1多少小时到多少小时、每小时多少钱。</p>
+          </div>
         </div>
-        <div id="diagnosis" class="diagnosis-grid" aria-live="polite"></div>
+        <div class="quick-columns">
+          <article>
+            <h3>线上大班课（5–25人）</h3>
+            <p class="muted">适合预算友好、先系统过题型方法的学生；写作/口语明显短板或目标7.0+时，建议后续搭配小班/1V1。</p>
+            <div id="online-large-quick" class="quick-grid"></div>
+          </article>
+          <article>
+            <h3>1V1价格阶梯</h3>
+            <p class="muted">每次课2小时；推荐时系统会按小时数自动匹配最低单价、最低总价、官方参考总价和CP码。</p>
+            <div id="one-on-one-rate-table" class="rate-table"></div>
+          </article>
+        </div>
       </section>
 
-      <section class="results-section" aria-labelledby="results-title">
-        <div class="section-heading">
-          <p class="eyebrow">Step 3</p>
-          <h2 id="results-title">推荐课程与价格</h2>
+      <section class="workspace">
+        <aside class="input-panel" aria-labelledby="form-title">
+          <div class="section-heading">
+            <p class="eyebrow">Step 1</p>
+            <h2 id="form-title">输入学生情况</h2>
+          </div>
+          <form id="matcher-form" class="matcher-form">
+            <label>当前雅思总分（必填）<select id="current-score" name="currentScore" required></select></label>
+            <label>目标雅思总分（必填）<select id="target-score" name="targetScore" required></select></label>
+            <div class="subscore-grid">
+              <label>听力小分<select name="listeningScore" data-subscore></select></label>
+              <label>阅读小分<select name="readingScore" data-subscore></select></label>
+              <label>写作小分<select name="writingScore" data-subscore></select></label>
+              <label>口语小分<select name="speakingScore" data-subscore></select></label>
+            </div>
+            <label>上课形式<select name="delivery"><option value="online">线上</option><option value="offline">线下</option><option value="any" selected>都可以</option></select></label>
+            <label>班型偏好<select name="classPreference"><option value="any" selected>都可以</option><option value="large">大班</option><option value="small">小班</option><option value="oneOnOne">1V1</option><option value="hybridClass">班课+1V1</option><option value="flight">飞跃计划</option></select></label>
+            <label>预算敏感度<select name="budget"><option value="budget">预算优先</option><option value="effect" selected>效果优先</option><option value="guarantee">高保障优先</option></select></label>
+            <label>备考用途<select name="purpose"><option>留学申请</option><option>研究生申请</option><option>移民</option><option>保研/考研</option><option>求职/外企</option><option>公务员</option><option>奖学金</option><option>单纯提升英语能力</option></select></label>
+            <label>是否接受先测评/试听<select name="trial"><option value="yes" selected>是</option><option value="no">否</option></select></label>
+            <label>是否有小分要求<select name="subscoreRequired"><option value="unknown" selected>不确定</option><option value="yes">有</option><option value="no">无</option></select></label>
+            <button type="submit" class="primary-btn">生成匹配方案</button>
+          </form>
+        </aside>
+
+        <section class="result-panel" aria-live="polite">
+          <div class="section-heading inline-heading">
+            <div>
+              <p class="eyebrow">Step 2</p>
+              <h2>推荐结果区</h2>
+            </div>
+            <span class="price-note">价格以实际活动为准，页面展示当前产品表价格。</span>
+          </div>
+          <div id="diagnosis-output" class="diagnosis-output"></div>
+          <div id="recommendations" class="recommendations"></div>
+        </section>
+      </section>
+
+      <section class="script-section" aria-labelledby="copy-title">
+        <div class="section-heading inline-heading">
+          <div>
+            <p class="eyebrow">Step 3</p>
+            <h2 id="copy-title">可复制话术区</h2>
+          </div>
+          <div class="button-row">
+            <button type="button" class="secondary-btn" data-copy="consultant-script">复制内部顾问版方案</button>
+            <button type="button" class="secondary-btn" data-copy="parent-script">复制发给学生/家长的话术</button>
+          </div>
         </div>
-        <div id="results" class="results-grid" aria-live="polite"></div>
+        <div class="script-grid">
+          <article><h3>内部顾问版</h3><textarea id="consultant-script" readonly></textarea></article>
+          <article><h3>发给学生/家长版</h3><textarea id="parent-script" readonly></textarea></article>
+        </div>
+      </section>
+
+      <section class="library-section" aria-labelledby="library-title">
+        <div class="section-heading inline-heading">
+          <div>
+            <p class="eyebrow">Product Library</p>
+            <h2 id="library-title">产品库详情区 / 可筛选产品表区</h2>
+          </div>
+        </div>
+        <div class="filters">
+          <label>线上/线下筛选<select id="filter-delivery"><option value="all">全部</option><option value="线上">线上</option><option value="线下">线下</option><option value="线上线下均可">线上线下均可</option></select></label>
+          <label>班型筛选<select id="filter-type"><option value="all">全部</option><option>线上大班</option><option>线上小班</option><option>线下班课</option><option>1V1</option><option>班课+1V1</option><option>飞跃计划</option><option>单项课</option></select></label>
+          <label>当前分筛选<select id="filter-current"><option value="all">全部</option></select></label>
+          <label>目标分筛选<select id="filter-target"><option value="all">全部</option></select></label>
+          <label>预算筛选<select id="filter-budget"><option value="all">全部</option><option value="budget">预算优先</option><option value="effect">效果优先</option><option value="guarantee">高保障优先</option></select></label>
+        </div>
+        <div id="category-tabs" class="category-tabs"></div>
+        <div id="product-table" class="product-table"></div>
       </section>
     </main>
-
-    <template id="course-card-template">
-      <article class="course-card">
-        <div class="course-card__header">
-          <div>
-            <p class="course-type"></p>
-            <h3></h3>
-          </div>
-          <span class="match-score"></span>
-        </div>
-        <p class="course-desc"></p>
-        <dl class="course-meta"></dl>
-        <div>
-          <h4>服务与优势</h4>
-          <ul class="benefits"></ul>
-        </div>
-        <div>
-          <h4>咨询话术</h4>
-          <p class="fit"></p>
-        </div>
-        <div class="price-row">
-          <span class="price"></span>
-          <button type="button" class="consult-button">加入备选</button>
-        </div>
-      </article>
-    </template>
-
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
     <script src="script.js"></script>
   </body>
 </html>
