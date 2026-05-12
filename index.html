@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>雅思课程咨询方案生成器</title>
+    <title>雅思课程咨询与分数换算工具</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -11,14 +11,14 @@
       <section class="hero" aria-labelledby="page-title">
         <div>
           <p class="eyebrow">IELTS Consultation Planner</p>
-          <h1 id="page-title">雅思课程咨询方案生成器</h1>
+          <h1 id="page-title">雅思课程咨询与分数换算工具</h1>
           <p class="hero-copy">
-            自用版咨询话术工具：输入总分和目标分，小分可选填，系统会自动判断补单项还是全科，生成班课、一对一加班课和飞跃计划组合方案，附官方价、最低价、课时、服务与推荐话术。
+            自用版咨询话术工具：先把托福、四六级、内部测试、考研英语、高考英语换算成参考雅思分，再输入目标分生成班课、一对一加班课和飞跃计划组合方案。
           </p>
         </div>
         <div class="hero-card" aria-label="咨询流程说明">
-          <span class="hero-card__number">3</span>
-          <span>步生成可讲方案</span>
+          <span class="hero-card__number">4</span>
+          <span>步完成换算与方案</span>
         </div>
       </section>
 
@@ -55,9 +55,50 @@
         </div>
       </section>
 
-      <section class="matcher-card" aria-labelledby="form-title">
+
+      <section class="converter-card" aria-labelledby="converter-title">
         <div class="section-heading">
           <p class="eyebrow">Step 1</p>
+          <h2 id="converter-title">雅思分数换算工具</h2>
+          <p class="muted">支持托福、四六级、紫藤入班 60 分钟测试、考研英语和高考英语换算为参考雅思分。换算仅用于咨询分层，正式申请仍以官方雅思成绩和院校要求为准。</p>
+        </div>
+        <form id="converter-form" class="converter-form">
+          <label>
+            考试类型
+            <select id="source-exam" name="sourceExam">
+              <option value="toeflOld">老托福 / TOEFL iBT（满分120）</option>
+              <option value="toeflNew">新托福（满分6）</option>
+              <option value="cet4" selected>英语四级 CET-4（满分710）</option>
+              <option value="cet6">英语六级 CET-6（满分710）</option>
+              <option value="internal60">紫藤雅思入班测试（满分60）</option>
+              <option value="postgradEnglish">考研英语（满分100）</option>
+              <option value="gaokaoEnglish">高考英语（默认满分150）</option>
+            </select>
+          </label>
+          <label>
+            测试分数
+            <input id="source-score" name="sourceScore" type="number" min="0" max="710" step="0.5" value="550" inputmode="decimal" />
+          </label>
+          <label id="gaokao-max-label" class="is-hidden">
+            高考英语满分
+            <select id="gaokao-max" name="gaokaoMax">
+              <option value="150" selected>150 分</option>
+              <option value="120">120 分</option>
+              <option value="100">100 分</option>
+            </select>
+          </label>
+          <button type="submit">换算雅思</button>
+        </form>
+        <div id="conversion-result" class="conversion-result" aria-live="polite"></div>
+        <details class="conversion-reference">
+          <summary>查看全部换算参考表</summary>
+          <div id="conversion-tables" class="conversion-tables"></div>
+        </details>
+      </section>
+
+      <section class="matcher-card" aria-labelledby="form-title">
+        <div class="section-heading">
+          <p class="eyebrow">Step 2</p>
           <h2 id="form-title">填写学生情况</h2>
         </div>
         <form id="matcher-form" class="matcher-form">
@@ -159,7 +200,7 @@
 
       <section class="plan-section" aria-labelledby="plan-title">
         <div class="section-heading">
-          <p class="eyebrow">Step 2</p>
+          <p class="eyebrow">Step 3</p>
           <h2 id="plan-title">可直接讲给学生的方案</h2>
           <p id="match-summary" class="muted">已根据默认条件生成方案；不按时间匹配，价格按产品表展示，成交价以实际政策为准。</p>
         </div>
@@ -168,7 +209,7 @@
 
       <section class="results-section" aria-labelledby="results-title">
         <div class="section-heading">
-          <p class="eyebrow">Step 3</p>
+          <p class="eyebrow">Step 4</p>
           <h2 id="results-title">推荐课程与价格</h2>
         </div>
         <div id="results" class="results-grid" aria-live="polite"></div>
