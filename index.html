@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>雅思产品匹配工具｜高顿紫藤内部顾问版</title>
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="advisor-upgrade.css" />
   </head>
   <body>
     <main class="app-shell">
@@ -12,7 +13,7 @@
         <div>
           <p class="eyebrow">Internal IELTS Product Matcher</p>
           <h1 id="page-title">雅思产品匹配工具</h1>
-          <p class="hero-copy">顾问内部自用页面：根据学生当前总分、目标分、小分短板、线上/线下偏好、班型偏好和预算敏感度，自动匹配高顿紫藤雅思课程，并生成可直接复制的内部顾问版方案与学生/家长话术。</p>
+          <p class="hero-copy">顾问内部自用页面：根据学生当前总分、目标分、小分短板、线上/线下偏好、班型偏好和预算敏感度，自动匹配高顿紫藤雅思课程，并生成可直接复制的内部顾问版方案与学生/家长话术。新增顾问增强层：学生情况录入、班课+1V1拆价、师资优势、集团优势、异议处理和成交推进。</p>
         </div>
         <div class="hero-card">
           <strong>只做雅思</strong>
@@ -48,13 +49,12 @@
         </article>
       </section>
 
-
       <section class="converter-section" aria-labelledby="converter-title">
         <div class="section-heading inline-heading">
           <div>
             <p class="eyebrow">Main Branch Tool Preserved</p>
             <h2 id="converter-title">雅思分数换算工具</h2>
-            <p class="muted">保留 main 分支已有可用内容：支持托福、四六级、紫藤入班 60 分钟测试、考研英语和高考英语换算为参考雅思分。换算仅用于咨询分层，不替代正式 IELTS 成绩。</p>
+            <p class="muted">支持托福、四六级、紫藤入班60分钟测试、考研英语和高考英语换算为参考雅思分。换算仅用于咨询分层，不替代正式 IELTS 成绩。</p>
           </div>
         </div>
         <form id="converter-form" class="converter-form">
@@ -81,7 +81,6 @@
           <div id="conversion-tables" class="conversion-tables"></div>
         </details>
       </section>
-
 
       <section class="quick-section" aria-labelledby="quick-title">
         <div class="section-heading inline-heading">
@@ -180,5 +179,6 @@
     </main>
     <div id="toast" class="toast" role="status" aria-live="polite"></div>
     <script src="script.js"></script>
+    <script src="advisor-upgrade.js"></script>
   </body>
 </html>
