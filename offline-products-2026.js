@@ -28,9 +28,11 @@
     '机考练习与模考资源'
   ];
 
-  const offlineRisk = '线下小班适合需要学习氛围和老师关注的学生；若写作/口语明显低于目标，建议搭配1V1补短板；价格与开班安排以北京校区实际排课和活动为准。';
+  const offlineRisk = '线下小班适合需要学习氛围和老师关注的学生；若写作/口语明显低于目标，建议搭配1V1补短板；页面优先展示北京最优惠价，具体开班、优惠、重读/补偿规则以北京校区系统与合同为准。';
 
   function offlineProduct(base) {
+    const original = base.originalPrice ?? base.price ?? 0;
+    const best = base.bestPrice ?? base.price ?? original;
     return {
       category: base.category || '线下班课',
       deliveryMode: '线下',
@@ -40,16 +42,27 @@
       retakeRule: base.retakeRule || '连报/指定产品满足入班基础与完课要求后，可按产品规则申请重读或补偿服务，具体以合同与校区规则为准。',
       supportPeriod: base.supportPeriod || '12个月',
       rating: base.rating || '北京线下新版',
-      originalPrice: base.price,
-      dailyPrice: base.price,
-      battlePrice: base.price,
+      price: best,
+      standardPrice: original,
+      bestPrice: best,
+      beijingBestPrice: best,
+      originalPrice: original,
+      dailyPrice: best,
+      battlePrice: best,
       advantages: base.advantages || offlineAdvantages,
       services: base.services || offlineServices,
       gifts: base.gifts || offlineGifts,
       risk: base.risk || offlineRisk,
       notSuitable: base.notSuitable || '时间无法线下到校、完全不接受固定班课节奏，或目标/小分要求需要高度定制的学生。',
       cp: base.cp || '北京线下新版产品，CP码以系统为准',
-      ...base
+      ...base,
+      price: best,
+      standardPrice: original,
+      bestPrice: best,
+      beijingBestPrice: best,
+      originalPrice: original,
+      dailyPrice: best,
+      battlePrice: best
     };
   }
 
@@ -57,84 +70,84 @@
     offlineProduct({
       id: 'offline-2026-entry', name: '雅思入门班', level: '0基础/基础薄弱', target: '冲4.5-5.0',
       suitable: '0基础或基础薄弱，先建立雅思题型认知、词汇基础和基本做题方法。',
-      price: 7800, totalHours: '40H', mainHours: '线下面授主课', liveHours: '小班3-6人',
+      originalPrice: 7800, bestPrice: 5800, totalHours: '40H', mainHours: '线下面授主课', liveHours: '小班3-6人',
       scoreMin: 0, scoreMax: 4.5, targetMin: 4.5, targetMax: 5.0, retake: '无'
     }),
     offlineProduct({
       id: 'offline-2026-basic', name: '雅思基础班', level: '基础4.5分', target: '冲5.5',
       suitable: '有一定英语基础但雅思方法薄弱，需要从4.5左右系统提升到5.5。',
-      price: 19800, totalHours: '68H', mainHours: '主课约44H + 配套训练', liveHours: '小班3-6人',
+      originalPrice: 19800, bestPrice: 15800, totalHours: '68H', mainHours: '主课约44H + 配套训练', liveHours: '小班3-6人',
       scoreMin: 4.5, scoreMax: 5.0, targetMin: 5.5, targetMax: 5.5,
       retake: '有', retakeRule: '满足入班基础与完课要求，完课后三个月内未达到5.5可按新版线下产品规则申请重读。'
     }),
     offlineProduct({
       id: 'offline-2026-intensive', name: '雅思强化班', level: '基础5.5分', target: '冲6.5',
       suitable: '已有5.5左右基础，需要强化技巧、速度、写作口语输出稳定性，目标6.5。',
-      price: 20800, totalHours: '68H', mainHours: '主课约44H + 配套训练', liveHours: '小班3-6人',
+      originalPrice: 20800, bestPrice: 15800, totalHours: '68H', mainHours: '主课约44H + 配套训练', liveHours: '小班3-6人',
       scoreMin: 5.5, scoreMax: 6.0, targetMin: 6.5, targetMax: 6.5,
       retake: '有', retakeRule: '满足入班基础与完课要求，完课后三个月内未达到6.5可按新版线下产品规则申请重读。'
     }),
     offlineProduct({
       id: 'offline-2026-sprint', name: '雅思冲刺班', level: '基础6.5分', target: '冲7.0及以上',
       suitable: '6.5左右冲7.0+，重点解决高分段技巧、写作口语表达升级和考前稳定性。',
-      price: 18800, totalHours: '52H', mainHours: '线下冲刺主课 + 配套训练', liveHours: '小班3-6人',
+      originalPrice: 18800, bestPrice: 12800, totalHours: '52H', mainHours: '线下冲刺主课 + 配套训练', liveHours: '小班3-6人',
       scoreMin: 6.5, scoreMax: 7.5, targetMin: 7.0, targetMax: 7.5,
       retake: '有', retakeRule: '满足入班基础与完课要求，完课后三个月内未达到7.0可按新版线下产品规则申请重读。'
     }),
     offlineProduct({
       id: 'offline-2026-entry-basic', name: '雅思入门+基础班', level: '基础4.0及以下', target: '冲5.5',
       suitable: '低基础学生从入门到5.5，适合需要较长周期系统打底的学生。',
-      price: 27600, totalHours: '108H', mainHours: '入门段 + 基础段', liveHours: '小班3-6人', supportPeriod: '15个月',
+      originalPrice: 27600, bestPrice: 18800, totalHours: '108H', mainHours: '入门段 + 基础段', liveHours: '小班3-6人', supportPeriod: '15个月',
       scoreMin: 0, scoreMax: 4.0, targetMin: 5.5, targetMax: 5.5,
       retake: '有', retakeRule: '满足入班基础与完课要求，完课后三个月内未达到5.5可按新版线下产品规则申请重读。'
     }),
     offlineProduct({
       id: 'offline-2026-basic-intensive', name: '雅思基础+强化班', level: '基础4.5分', target: '冲6.5',
       suitable: '4.5左右到6.5，基础段解决框架，强化段提升技巧和输出稳定性。',
-      price: 40600, totalHours: '122H', mainHours: '基础段 + 强化段', liveHours: '小班3-6人', supportPeriod: '15个月',
+      originalPrice: 40600, bestPrice: 26800, totalHours: '122H', mainHours: '基础段 + 强化段', liveHours: '小班3-6人', supportPeriod: '15个月',
       scoreMin: 4.5, scoreMax: 5.0, targetMin: 6.5, targetMax: 6.5,
       retake: '有', retakeRule: '满足入班基础与完课要求，完课后三个月内未达到6.5可按新版线下产品规则申请重读。'
     }),
     offlineProduct({
       id: 'offline-2026-intensive-sprint', name: '雅思强化+冲刺班', level: '基础5.5分', target: '冲7.0及以上',
       suitable: '5.5/6.0基础冲7.0+，适合目标高、需要强化+冲刺连续推进的学生。',
-      price: 39600, totalHours: '120H', mainHours: '强化段 + 冲刺段', liveHours: '小班3-6人', supportPeriod: '15个月',
+      originalPrice: 39600, bestPrice: 23800, totalHours: '120H', mainHours: '强化段 + 冲刺段', liveHours: '小班3-6人', supportPeriod: '15个月',
       scoreMin: 5.5, scoreMax: 6.0, targetMin: 7.0, targetMax: 7.5,
       retake: '有', retakeRule: '满足入班基础与完课要求，完课后三个月内未达到7.0可按新版线下产品规则申请重读。'
     }),
     offlineProduct({
       id: 'offline-2026-entry-basic-intensive', name: '雅思入门+基础+强化班', level: '基础4.0及以下', target: '冲6.5',
       suitable: '低基础长线冲6.5，适合预算允许且希望线下系统陪跑的学生。',
-      price: 48400, totalHours: '148H', mainHours: '入门段 + 基础段 + 强化段', liveHours: '小班3-6人', supportPeriod: '18个月',
+      originalPrice: 48400, bestPrice: 30800, totalHours: '148H', mainHours: '入门段 + 基础段 + 强化段', liveHours: '小班3-6人', supportPeriod: '18个月',
       scoreMin: 0, scoreMax: 4.0, targetMin: 6.5, targetMax: 6.5,
       retake: '有', retakeRule: '满足入班基础与完课要求，完课后三个月内未达到6.5可按新版线下产品规则申请重读。'
     }),
     offlineProduct({
       id: 'offline-2026-basic-intensive-sprint', name: '雅思基础+强化+冲刺班', level: '基础4.5分', target: '冲7.0及以上',
       suitable: '4.5左右长线冲7.0+，适合目标高、需要完整线下体系和高频反馈的学生。',
-      price: 59400, totalHours: '181H', mainHours: '基础段 + 强化段 + 冲刺段', liveHours: '小班3-6人', supportPeriod: '18个月',
+      originalPrice: 59400, bestPrice: 36800, totalHours: '181H', mainHours: '基础段 + 强化段 + 冲刺段', liveHours: '小班3-6人', supportPeriod: '18个月',
       scoreMin: 4.5, scoreMax: 5.0, targetMin: 7.0, targetMax: 7.5,
       retake: '有', retakeRule: '满足入班基础与完课要求，完课后三个月内未达到7.0可按新版线下产品规则申请重读。'
     }),
     offlineProduct({
       id: 'offline-2026-fa', category: '班课+1V1', classType: '班课+1V1', name: '套餐雅思线下A计划', level: '目标总分约5.5', target: '班课+32H 1V1补弱',
       suitable: '基础偏弱或目标5.5左右，需要线下班课打底，并用1V1补写作/口语短板。',
-      price: 46600, totalHours: '约100H', mainHours: '68H线下班课', liveHours: '32H 1V1', supportPeriod: '12个月',
-      scoreMin: 0, scoreMax: 5.0, targetMin: 5.5, targetMax: 5.5, rating: '高端组合',
+      originalPrice: 49600, bestPrice: 32800, totalHours: '约100H', mainHours: '68H线下班课', liveHours: '32H 1V1', supportPeriod: '12个月',
+      scoreMin: 0, scoreMax: 5.0, targetMin: 5.5, targetMax: 5.5, rating: '高端组合｜北京优惠',
       retake: '有', retakeRule: '班课与1V1组合产品，满足入班基础、完课和考试要求后，按新版高端产品规则执行。'
     }),
     offlineProduct({
       id: 'offline-2026-fb', category: '班课+1V1', classType: '班课+1V1', name: '套餐雅思线下B计划', level: '目标总分约6.5', target: '班课+64H 1V1补弱',
       suitable: '目标6.5，既要系统线下学习，也需要较充分1V1解决输出项和小分短板。',
-      price: 78400, totalHours: '约132H', mainHours: '68H线下班课', liveHours: '64H 1V1', supportPeriod: '12个月',
-      scoreMin: 4.5, scoreMax: 5.5, targetMin: 6.5, targetMax: 6.5, rating: '高端组合',
+      originalPrice: 78400, bestPrice: 52800, totalHours: '约132H', mainHours: '68H线下班课', liveHours: '64H 1V1', supportPeriod: '12个月',
+      scoreMin: 4.5, scoreMax: 5.5, targetMin: 6.5, targetMax: 6.5, rating: '高端组合｜北京优惠',
       retake: '有', retakeRule: '班课与1V1组合产品，满足入班基础、完课和考试要求后，按新版高端产品规则执行。'
     }),
     offlineProduct({
       id: 'offline-2026-fc', category: '班课+1V1', classType: '班课+1V1', name: '套餐雅思线下C计划', level: '目标总分约7.0+', target: '班课+108H 1V1补弱',
       suitable: '目标7.0+或小分要求高，需要线下班课系统学习与较高强度1V1冲刺。',
-      price: 118000, totalHours: '约176H', mainHours: '68H线下班课', liveHours: '108H 1V1', supportPeriod: '12个月',
-      scoreMin: 4.5, scoreMax: 6.0, targetMin: 7.0, targetMax: 7.5, rating: '高端组合',
+      originalPrice: 118000, bestPrice: 76800, totalHours: '约176H', mainHours: '68H线下班课', liveHours: '108H 1V1', supportPeriod: '12个月',
+      scoreMin: 4.5, scoreMax: 6.0, targetMin: 7.0, targetMax: 7.5, rating: '高端组合｜北京优惠',
       retake: '有', retakeRule: '班课与1V1组合产品，满足入班基础、完课和考试要求后，按新版高端产品规则执行。'
     })
   ];
@@ -189,20 +202,22 @@
         if (!plan) return;
 
         const output = document.querySelector('#advisor-output');
-        if (output && !document.querySelector('#offline-2026-card')) {
+        const oldCard = document.querySelector('#offline-2026-card');
+        if (oldCard) oldCard.remove();
+        if (output) {
           const card = document.createElement('article');
           card.id = 'offline-2026-card';
           card.className = 'advisor-card';
-          card.innerHTML = `<h3>新版北京线下产品匹配</h3><p><b>${plan.name}</b>｜${plan.level}｜${plan.target}</p><p><b>参考价格：</b>${money(plan.price)}｜<b>课时：</b>${plan.totalHours}｜<b>班型：</b>${plan.classSize}</p><p>${plan.suitable}</p><p class="muted">说明：已按新版线下产品覆盖原线下课；具体开班、优惠、重读/补偿规则以校区系统与合同为准。</p>`;
+          card.innerHTML = `<h3>新版北京线下产品匹配</h3><p><b>${plan.name}</b>｜${plan.level}｜${plan.target}</p><p><b>原价：</b>${money(plan.standardPrice)}｜<b>北京最优惠价：</b>${money(plan.bestPrice)}｜<b>课时：</b>${plan.totalHours}｜<b>班型：</b>${plan.classSize}</p><p>${plan.suitable}</p><p class="muted">说明：已按新版北京线下产品覆盖原线下课；匹配和话术优先展示北京最优惠价，具体开班、优惠、重读/补偿规则以校区系统与合同为准。</p>`;
           output.appendChild(card);
         }
 
         const consultant = document.querySelector('#consultant-script');
         const parent = document.querySelector('#parent-script');
-        const text = `\n\n【新版线下产品匹配】\n推荐：${plan.name}\n适合：${plan.level}，${plan.target}\n价格：${money(plan.price)}\n课时：${plan.totalHours}\n推荐理由：${plan.suitable}\n备注：新版北京线下小班为3-6人，适合需要线下氛围、老师关注和学管督学的学生。`;
-        if (consultant && !consultant.value.includes('【新版线下产品匹配】')) consultant.value += text;
+        const text = `\n\n【新版线下产品匹配｜北京优惠价】\n推荐：${plan.name}\n适合：${plan.level}，${plan.target}\n原价：${money(plan.standardPrice)}\n北京最优惠价：${money(plan.bestPrice)}\n课时：${plan.totalHours}\n推荐理由：${plan.suitable}\n备注：新版北京线下小班为3-6人，适合需要线下氛围、老师关注和学管督学的学生。`;
+        if (consultant && !consultant.value.includes('【新版线下产品匹配｜北京优惠价】')) consultant.value += text;
         if (parent && !parent.value.includes('新版北京线下小班')) {
-          parent.value += `\n\n如果选择线下，我们现在新版北京线下产品更适合按阶段匹配：当前基础和目标分对应「${plan.name}」，参考费用${money(plan.price)}，小班3-6人，课堂关注度和学管跟进会比普通大班更强。`;
+          parent.value += `\n\n如果选择线下，我们现在新版北京线下产品更适合按阶段匹配：当前基础和目标分对应「${plan.name}」，原价${money(plan.standardPrice)}，北京最优惠价${money(plan.bestPrice)}，小班3-6人，课堂关注度和学管跟进会比普通大班更强。`;
         }
       }, 180);
     });
